@@ -13,7 +13,7 @@ Preloader.prototype = {
 
       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
       this.load.setPreloadSprite(this.asset);
-      this.load.image('testsprite', 'assets/test.png');
+      this.load.image('testsprite', 'assets/TR8R.png');
       this.load.image('anythingyouwant','assets/picture.jpeg')
   },
 

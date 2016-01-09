@@ -1,4 +1,4 @@
-var Player = require('../models/player');
+var Player = require('../models/player.js');
 
 var Game = function () {
   this.testentity = null;
