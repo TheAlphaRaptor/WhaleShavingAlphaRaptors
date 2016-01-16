@@ -14,8 +14,11 @@ Preloader.prototype = {
       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
       this.load.setPreloadSprite(this.asset);
       this.load.image('testsprite', 'assets/TR8R.png');
+      this.game.load.spritesheet('shave','assets/shave.jpg',341,496);
+      this.game.load.image('background', 'assets/636x460design_01.jpg');
       this.load.image('anythingyouwant','assets/picture.jpeg')
   },
+
 
   create: function () {
     this.asset.cropEnabled = false;
