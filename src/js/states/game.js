@@ -1,3 +1,6 @@
+function create(){
+    game.add.sprite(0,0,"Dan");
+}
 var Player = require('../models/player.js');
 
 var Game = function () {
