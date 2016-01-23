@@ -1,6 +1,3 @@
-function create(){
-    game.add.sprite(0,0,"Dan");
-}
 var Player = require('../models/player.js');
 
 var Game = function () {
@@ -14,7 +11,7 @@ Game.prototype = {
   create: function () {
     var x = (this.game.width / 2) - 100;
     var y = (this.game.height / 2) - 50;
-
+    this.add.sprite(0,0,"Dan");
     this.testentity = new Player(this.game, x, y);
     this.testentity.anchor.setTo(0.5, 0.5);
 

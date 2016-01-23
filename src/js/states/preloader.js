@@ -17,7 +17,7 @@ Preloader.prototype = {
       this.game.load.spritesheet('razor', 'assets/trazorparent.png', 341, 496);
       this.game.load.image('background', 'assets/636x460design_01.jpg');
       this.load.image('anythingyouwant', 'assets/picture.jpeg');
-      this.game.load.image("Dan", "assets/Dan.png");
+      this.load.image("Dan", "assets/Dan.png");
   },
 
   create: function () {
