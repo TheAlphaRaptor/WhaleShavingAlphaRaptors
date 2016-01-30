@@ -15,6 +15,17 @@ Game.prototype = {
     this.testentity = new Player(this.game, x, y);
     this.testentity.anchor.setTo(0.5, 0.5);
 
+    this.physics.startSystem(Phaser.Physics.ARCADE);
+
+    image = this.add.sprite(0, 0, 'Enemy');
+
+    this.physics.enable(image, Phaser.Physics.ARCADE);
+
+    image.body.velocity.setTo(200,200);
+
+    image.body.collideWorldBounds = true;
+
+    image.body.bounce.set(1);
     //this.input.onDown.add(this.onInputDown, this);
   },
 
