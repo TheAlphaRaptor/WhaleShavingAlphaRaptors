@@ -15,7 +15,7 @@ Game.prototype = {
     this.testentity = new Player(this.game, x, y);
     this.testentity.anchor.setTo(0.5, 0.5);
 
-    this.input.onDown.add(this.onInputDown, this);
+    //this.input.onDown.add(this.onInputDown, this);
   },
 
   update: function () {

@@ -18,6 +18,7 @@ Preloader.prototype = {
       this.game.load.image('background', 'assets/636x460design_01.jpg');
       this.load.image('anythingyouwant', 'assets/picture.jpeg');
       this.load.image("Dan", "assets/Dan.png");
+      this.game.load.image('enemy','assets/Narbrawl.png');
   },
 
   create: function () {
