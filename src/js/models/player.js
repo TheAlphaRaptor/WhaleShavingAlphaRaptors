@@ -1,5 +1,5 @@
 var Player = function (game, x, y) {
-    Phaser.Sprite.call(this, game, x, y, 'testsprite');
+    Phaser.Sprite.call(this, game, 500, 20, 'testsprite');
     game.add.existing(this);
 }
 
