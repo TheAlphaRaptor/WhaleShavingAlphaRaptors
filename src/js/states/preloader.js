@@ -19,7 +19,8 @@ Preloader.prototype = {
       this.load.image('splash', 'assets/Epic.jpg');
       this.load.image("Dan", "assets/Dan.png");
       this.load.image('Enemy','assets/Narbrawl2.png');
-      this.game.load.image('pixwhale','assets/WSAR.jpg');
+      this.load.image('pixwhale','assets/WSAR.jpg');
+      this.load.audio('splashsong', ['assets/splashsound.mp3']);
   },
 
   create: function () {

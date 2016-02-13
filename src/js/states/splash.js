@@ -9,9 +9,11 @@ Splash.prototype = {
     this.asset = this.add.sprite(160,60,'splash')
     this.asset.alpha = 0;
     this.faded_in = false;
-
+    music =  this.add.audio('splashsong')
+    music.play ();
   },
-  update: function () {
+    update: function () {
+
     if (this.asset.alpha <1 && !this.faded_in) {
      this.asset.alpha+=0.01;
     } else if (this.asset.alpha >= 1) {
