@@ -31,6 +31,7 @@ Game.prototype = {
 
   update: function () {
     image.angle += 10;
+
   },
 
   onInputDown: function () {

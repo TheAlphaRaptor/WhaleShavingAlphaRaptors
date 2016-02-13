@@ -6,7 +6,7 @@ module.exports = Splash;
 
 Splash.prototype = {
   create: function () {
-    this.asset = this.add.sprite(160,60,'anythingyouwant')
+    this.asset = this.add.sprite(160,60,'splash')
     this.asset.alpha = 0;
     this.faded_in = false;
 

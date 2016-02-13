@@ -2,11 +2,10 @@ var Menu = function () {
   this.text = null;
 };
 module.exports = Menu;
+var button;
+var background;
 
 Menu.prototype = {
-//var button;
-//var background;
-
   create: function () {
 
    // var x = this.game.width / 2;

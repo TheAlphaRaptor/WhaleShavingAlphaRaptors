@@ -16,9 +16,10 @@ Preloader.prototype = {
       this.load.image('testsprite', 'assets/tr8r.png');
       this.game.load.spritesheet('razor', 'assets/trazorparent.png', 341, 496);
       this.game.load.image('background', 'assets/636x460design_01.jpg');
-      this.load.image('anythingyouwant', 'assets/picture.jpeg');
+      this.load.image('splash', 'assets/Epic.jpg');
       this.load.image("Dan", "assets/Dan.png");
       this.load.image('Enemy','assets/Narbrawl2.png');
+      this.game.load.image('pixwhale','assets/WSAR.jpg');
   },
 
   create: function () {
