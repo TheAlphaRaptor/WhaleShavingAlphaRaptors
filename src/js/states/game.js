@@ -25,7 +25,7 @@ Game.prototype = {
 
     player.collideWorldBounds = true;
 
-    player.body.bounce.set(1);
+    //player.body.bounce.set(0.9);
 
     player.inputEnabled = true;
     player.input.enableDrag();
@@ -47,7 +47,12 @@ Game.prototype = {
     image.angle += 1;
 
   },
-
+  startDrag: function() {
+    sprite.body.moves = false;
+  },
+  stopDrag: function(){
+  sprite.body.moves = true;
+  },
   onInputDown: function () {
     this.game.state.start('Menu');
   }
