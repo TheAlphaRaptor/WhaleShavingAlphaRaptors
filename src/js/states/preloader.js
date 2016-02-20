@@ -21,6 +21,7 @@ Preloader.prototype = {
       this.load.image('Enemy','assets/Narbrawl2.png');
       this.load.image('pixwhale','assets/WSAR.jpg');
       this.load.audio('splashsong', ['assets/splashsound.mp3']);
+      this.load.audio('gamesong', ['assets/slpashsound.mp3']);
   },
 
   create: function () {

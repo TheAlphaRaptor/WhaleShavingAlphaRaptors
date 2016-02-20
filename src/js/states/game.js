@@ -1,19 +1,22 @@
-var Player = require('../models/player.js');
+//var Player = require('../models/player.js');
 
-var Game = function () {
+var game = function () {
   this.testentity = null;
 };
 
-module.exports = Game;
+module.exports = game;
 
-Game.prototype = {
+game.prototype = {
 
   create: function () {
     var x = (this.game.width / 2) - 100;
     var y = (this.game.height / 2) - 50;
     this.add.sprite(0,0,"Dan");
-    this.testentity = new Player(this.game, x, y);
-    this.testentity.anchor.setTo(0.5, 0.5);
+   // this.testentity = new Player(this.game, x, y);
+   // this.testentity.anchor.setTo(0.5, 0.5);
+    music = this.add.audio('gamesound');
+
+    music.play();
 
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -26,14 +29,14 @@ Game.prototype = {
     player.collideWorldBounds = true;
 
     //player.body.bounce.set(0.9);
-
+    player.scale.setTo(.5,.5);
     player.inputEnabled = true;
     player.input.enableDrag();
+    image.scale.setTo(.7,.7);
+    player.events.onDragStart.add(this.startDrag, this);
+    player.events.onDragStop.add(this.stopDrag, this);
 
-    player.events.onDragStart.add(startDrag, this);
-    player.events.onDragStop.add(stopDrag, this);
-
-    this.physics.enable(image, player, Phaser.Physics.ARCADE);
+    this.physics.enable(image, Phaser.Physics.ARCADE);
 
     image.body.velocity.setTo(200,200);
 
@@ -53,7 +56,7 @@ Game.prototype = {
   stopDrag: function(){
   sprite.body.moves = true;
   },
-  onInputDown: function () {
-    this.game.state.start('Menu');
-  }
+ // onInputDown: function () {
+ //   this.game.state.start('Menu');
+ // }
 };
