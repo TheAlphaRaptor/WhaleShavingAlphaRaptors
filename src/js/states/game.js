@@ -19,7 +19,21 @@ Game.prototype = {
 
     image = this.add.sprite(0, 0, 'Enemy');
 
-    this.physics.enable(image, Phaser.Physics.ARCADE);
+    this.physics.arcade.gravity.y=20;
+
+    player = this.add.sprite(1, 1, 'testsprite');
+
+    player.collideWorldBounds = true;
+
+    player.body.bounce.set(1);
+
+    player.inputEnabled = true;
+    player.input.enableDrag();
+
+    player.events.onDragStart.add(startDrag, this);
+    player.events.onDragStop.add(stopDrag, this);
+
+    this.physics.enable(image, player, Phaser.Physics.ARCADE);
 
     image.body.velocity.setTo(200,200);
 
@@ -30,7 +44,7 @@ Game.prototype = {
   },
 
   update: function () {
-    image.angle += 10;
+    image.angle += 1;
 
   },
 
