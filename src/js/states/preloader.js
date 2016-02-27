@@ -22,6 +22,7 @@ Preloader.prototype = {
       this.load.image('pixwhale','assets/WSAR.jpg');
       this.load.audio('splashsong', ['assets/splashsound.mp3']);
       this.load.audio('gamesong', ['assets/slpashsound.mp3']);
+      this.load.image('bananurai', 'assets/bananurai.png');
   },
 
   create: function () {

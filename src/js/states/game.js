@@ -12,8 +12,12 @@ game.prototype = {
     var x = (this.game.width / 2) - 100;
     var y = (this.game.height / 2) - 50;
     this.add.sprite(0,0,"Dan");
-   // this.testentity = new Player(this.game, x, y);
-   // this.testentity.anchor.setTo(0.5, 0.5);
+    var key1;
+    var key2;
+    key1=this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    key1.onDown.add(this.playerSpin, this);
+   // key2=this.input.keyboard.addKey(Phaser.Keyboard.ONE);
+    //key2.onDown.add(this.banana, this);
     music = this.add.audio('gamesound');
 
     music.play();
@@ -26,7 +30,7 @@ game.prototype = {
 
     player = this.add.sprite(1, 1, 'testsprite');
 
-    player.collideWorldBounds = true;
+    //player.collideWorldBounds = true;
 
     //player.body.bounce.set(0.9);
     player.scale.setTo(.5,.5);
@@ -41,21 +45,27 @@ game.prototype = {
     image.body.velocity.setTo(200,200);
 
     image.body.collideWorldBounds = true;
-
+   // player.body.collodeWorldBounds = true;
     image.body.bounce.set(1);
     //this.input.onDown.add(this.onInputDown, this);
   },
 
   update: function () {
-    image.angle += 1;
+   image.angle += 100;
 
   },
   startDrag: function() {
-    sprite.body.moves = false;
+    player.body.moves = false;
   },
   stopDrag: function(){
-  sprite.body.moves = true;
+  player.body.moves = true;
   },
+  playerSpin: function(){
+  player.angle += 20;
+  },
+  //banana: function(){
+  //  player.loadTexture(bananurai, 0);
+ // },
  // onInputDown: function () {
  //   this.game.state.start('Menu');
  // }
