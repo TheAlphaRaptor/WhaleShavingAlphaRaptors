@@ -7,7 +7,7 @@ var game = function () {
 module.exports = game;
 
 game.prototype = {
-
+  banana:false,
   create: function () {
     var x = (this.game.width / 2) - 100;
     var y = (this.game.height / 2) - 50;
@@ -18,10 +18,8 @@ game.prototype = {
     var right = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
     var up = this.input.keyboard.addKey(Phaser.Keyboard.UP);
     var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
-    key1=this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    key1.onDown.add(this.playerSpin, this);
-   // key2=this.input.keyboard.addKey(Phaser.Keyboard.ONE);
-    //key2.onDown.add(this.banana, this);
+    key2=this.input.keyboard.addKey(Phaser.Keyboard.ONE);
+    key2.onDown.add(this.banana, this);
     music = this.add.audio('gamesound');
 
     music.play();
@@ -58,6 +56,7 @@ game.prototype = {
   },
 
   update: function () {
+    var key1=this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     image.angle += 100;
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
@@ -78,6 +77,9 @@ game.prototype = {
     {
       player.body.velocity.y = 100;
     }
+    if (key1.isDown) {
+      player.body.angularVelocity = -50;
+    }
   },
  // startDrag: function() {
  //   player.body.moves = false;
@@ -85,13 +87,17 @@ game.prototype = {
  // stopDrag: function(){
  // player.body.moves = true;
  // },
-  playerSpin: function(){
-  player.body.angularVelocity = 500;
+
+  banana: function(){
+    if (this.banana) {
+      player.loadTexture('testsprite', 0);
+      this.banana = false;
+    } else {
+      player.loadTexture('bananurai', 0);
+      this.banana = true;
+    }
   },
-  //banana: function(){
-  //  player.loadTexture(bananurai, 0);
- // },
  // onInputDown: function () {
- //   this.game.state.start('Menu');
+  //  this.game.state.start('Menu');
  // }
 };
