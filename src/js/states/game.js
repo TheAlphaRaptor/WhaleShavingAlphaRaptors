@@ -49,7 +49,7 @@ game.prototype = {
     image.body.collideWorldBounds = true;
 
     player.body.collideWorldBounds = true;
-    //image.body.bounce.set(1);
+    image.body.bounce.set(1);
     //this.input.onDown.add(this.onInputDown, this);
    // this.game.world.setBounds(0,0,5000,50000);
     this.game.camera.follow(this.player);
@@ -57,7 +57,7 @@ game.prototype = {
 
   update: function () {
     var key1=this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    image.angle += 100;
+   // image.angle += 100;
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
     player.body.angularVelocity = 0;
