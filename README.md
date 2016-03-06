@@ -4,8 +4,14 @@ Welcome young coders! This is the skeleton for our next project.
 
 Clone this repository and code away!
 
-To get started, run `npm install`. Then run `sudo npm install -g gulp` (Gulp is similar to Grunt...UGH!)
+Install the latest stable Node package from here: https://nodejs.org/en/
 
-Once you have it up and running, type gulp into the terminal and watch all your wildest dreams come true.s
+Install Grunt using `sudo npm install -g grunt`.
 
+Install Bower using `npm install -g bower`.
 
+Run `npm install` in the project directory.
+
+Run `bower install` in the project directory.
+
+Once you have it up and running, type grunt into the terminal and watch all your wildest dreams come true.
