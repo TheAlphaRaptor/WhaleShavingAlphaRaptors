@@ -20,7 +20,7 @@ game.prototype = {
     var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     key2=this.input.keyboard.addKey(Phaser.Keyboard.ONE);
     key2.onDown.add(this.banana, this);
-    song = this.add.audio('gamesound');
+    song = this.add.audio('gamesong');
     song.play ();
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.startSystem(Phaser.Physics.P2JS);

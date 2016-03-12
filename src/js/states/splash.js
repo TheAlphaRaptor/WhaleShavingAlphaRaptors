@@ -20,7 +20,7 @@ Splash.prototype = {
       this.faded_in = true;
     }
     if (this.faded_in) {
-      this.asset.alpha -= 0.009
+      this.asset.alpha -= 0.0019
     }
     if (this.asset.alpha < 0) {
       this.game.state.start('Menu');
