@@ -23,6 +23,7 @@ Preloader.prototype = {
       this.load.audio('splashsong', ['assets/splashsound.mp3']);
       this.load.audio('gamesong', ['assets/gameplay.mp3']);
       this.load.image('bananurai', 'assets/banaurai.png');
+      this.load.image('plot', 'assets/plot.png')
   },
 
   create: function () {

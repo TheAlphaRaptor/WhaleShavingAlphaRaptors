@@ -20,39 +20,31 @@ game.prototype = {
     var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     key2=this.input.keyboard.addKey(Phaser.Keyboard.ONE);
     key2.onDown.add(this.banana, this);
-    music = this.add.audio('gamesound');
-
-    music.play();
-
+    song = this.add.audio('gamesound');
+    song.play ();
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.startSystem(Phaser.Physics.P2JS);
     image = this.add.sprite(0, 0, 'Enemy');
-
     //this.physics.arcade.gravity.y=20;
-
     player = this.add.sprite(1, 1, 'testsprite');
-
     //player.collideWorldBounds = true;
-
-    //player.body.bounce.set(0.9);
     player.scale.setTo(.5,.5);
     player.inputEnabled = true;
-    //player.input.enableDrag();
     image.scale.setTo(.7,.7);
-    //player.events.onDragStart.add(this.startDrag, this);
-   // player.events.onDragStop.add(this.stopDrag, this);
     this.cursors = this.game.input.keyboard.createCursorKeys();
     this.physics.enable(image, Phaser.Physics.ARCADE);
     this.physics.enable(player, Phaser.Physics.P2JS);
+    this.physics.enable(image, Phaser.Physics.P2JS);
     image.body.velocity.setTo(200,200);
-
     image.body.collideWorldBounds = true;
-
     player.body.collideWorldBounds = true;
     image.body.bounce.set(1);
-    //this.input.onDown.add(this.onInputDown, this);
    // this.game.world.setBounds(0,0,5000,50000);
     this.game.camera.follow(this.player);
+    var playerCollisionGroup = this.physics.p2.createCollisionGroup();
+    var narbrawlCollisionGroup = this.physics.p2.createCollisionGroup();
+    this.physics.p2.updateBoundsCollisionGroup();
+
   },
 
   update: function () {
