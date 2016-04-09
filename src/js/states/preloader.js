@@ -21,10 +21,11 @@ Preloader.prototype = {
       this.load.image('Enemy','assets/Narbrawl2.png');
       this.load.image('pixwhale','assets/WSAR.jpg');
       this.load.audio('splashsong', ['assets/splashsound.mp3']);
-      this.load.audio('gamesong', ['assets/gameplay.mp3']);
+      this.load.audio('gamesong', ['assets/ShepardTone.mp3']);
       this.load.image('bananurai', 'assets/banaurai.png');
       this.load.image('plot', 'assets/plot.png');
       this.load.image("pupper", 'assets/pupperparency.png');
+      this.load.audio('flush', ['assets/toilet.mp3']);
   },
 
   create: function () {
