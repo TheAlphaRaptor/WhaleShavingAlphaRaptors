@@ -13,8 +13,8 @@ game.prototype = {
   create: function () {
     this.game.world.setBounds(0, 0, 800, 800);
 
-    var x = (this.game.width / 2) - 100;
-    var y = (this.game.height / 2) - 50;
+    var x = (this.game.width) - 100;
+    var y = (this.game.height) - 50;
     this.add.sprite(0,0,"Dan");
     var key1;
     var key2;
@@ -52,7 +52,7 @@ game.prototype = {
     image.body.velocity.setTo(200,200);
     image.body.collideWorldBounds = true;
     player.body.collideWorldBounds = true;
-    this.game.world.setBounds(0, 0, this.world.width, this.world.height);
+    this.game.world.setBounds(0, 0, 800, 800);
    // this.physics.p2.restitution = 0.8;
    // image.smoothed=false;
    // player.smoothed=false;
