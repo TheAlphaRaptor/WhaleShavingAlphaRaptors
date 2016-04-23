@@ -27,7 +27,7 @@ game.prototype = {
 
         wakeup = this.add.audio('WAKEMEUP');
         wakeup.play ();
-        wakeup.volume=50
+        wakeup.volume=.5
         flush = this.add.audio('flush');
         // song.loop.true ();
         // this.world.setBounds(0,0,WORLD_WIDTH,WORLD_HEIGHT);

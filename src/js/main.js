@@ -5,7 +5,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'my-game-game');
 window.Utils = require('./utils');
 
 window.playerState = {
-    currentLevel: 'Level2'
+    currentLevel: 'Game'
 };
 
 game.state.add('Boot', require('./states/boot'));

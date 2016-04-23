@@ -7,12 +7,13 @@ var game = function () {
 module.exports = game;
 
 const textures = ["testsprite", "bananurai", "pupper"];
-
+var image;
+var player;
 game.prototype = {
   texture: 0,
   create: function () {
     this.game.world.setBounds(0, 0, 800, 800);
-
+// Varibles
     var x = (this.game.width) - 100;
     var y = (this.game.height) - 50;
     this.add.sprite(0,0,"Dan");
@@ -25,7 +26,7 @@ game.prototype = {
     var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     key2=this.input.keyboard.addKey(Phaser.Keyboard.W);
     key2.onDown.add(this.changeTexture, this);
-
+// End varibles
     song = this.add.audio('gamesong');
     song.play ();
     flush = this.add.audio('flush');
@@ -37,17 +38,19 @@ game.prototype = {
     image = this.add.sprite(100, 100, 'Enemy');
     //this.physics.arcade.gravity.y=20;
     player = this.add.sprite(this.world.centerX, this.world.centerY, 'testsprite');
-    this.physics.enable(player, Phaser.Physics.P2JS);
+   // this.physics.enable(player, Phaser.Physics.P2JS);
     //player.collideWorldBounds = true;
     player.scale.setTo(.5,.5);
     player.inputEnabled = true;
-    image.scale.setTo(.7,.7);
+    image.scale.setTo(.5,.5);
 
     this.cursors = this.game.input.keyboard.createCursorKeys();
     this.physics.enable(image, Phaser.Physics.ARCADE);
+    this.physics.enable(player, Phaser.Physics.ARCADE);
     this.physics.enable(player, Phaser.Physics.P2JS);
-    this.physics.enable(image, Phaser.Physics.P2JS);
+
     player.body.enable = true;
+
 
     image.body.velocity.setTo(200,200);
     image.body.collideWorldBounds = true;
@@ -58,20 +61,26 @@ game.prototype = {
    // player.smoothed=false;
     image.body.bounce.set(1);
     //this.world.setBounds(0,0,500,500);
+   // player.body.createBodyCallback(image, hitImage, this);
+    this.game.physics.p2.setImpactEvents(true);
 
-    this.game.camera.follow(this.player);
+    this.game.camera.follow(player);
  //   var playerCollisionGroup = this.physics.p2.createCollisionGroup();
   //  var narbrawlCollisionGroup = this.physics.p2.createCollisionGroup();
   //  this.physics.p2.updateBoundsCollisionGroup();
 
   },
-
+ // hitImage: function(body1, body2) {
+   // this.game.state.start('Level2');
+ // },
   update: function () {
+    this.game.physics.arcade.overlap(player, image, this.Win, null, this);
     var key1=this.input.keyboard.addKey(Phaser.Keyboard.A);
     // image.angle += 100;
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
     player.body.angularVelocity = 0;
+
     if (this.cursors.left.isDown)
     {
       player.body.velocity.x = -200;
@@ -100,7 +109,13 @@ game.prototype = {
       this.texture = 0;
     }
     player.loadTexture(textures[this.texture], 0);
-  }
+  },
+  Win: function(obj1 ,obj2)
+  {
+    this.game.state.start("Level2");
+    song.pause();
+
+  },
  // onInputDown: function () {
   //  this.game.state.start('Menu');
  // }
