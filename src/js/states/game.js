@@ -79,7 +79,7 @@ game.prototype = {
     // image.angle += 100;
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
-    player.body.angularVelocity = 0;
+    player.body.angularVelocity = 50;
 
     if (this.cursors.left.isDown)
     {
