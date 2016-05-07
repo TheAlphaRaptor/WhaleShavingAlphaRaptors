@@ -29,6 +29,10 @@ Preloader.prototype = {
       this.load.audio('WAKEMEUP', ['assets/WAKEMEUPINSIDE.mp3']);
       this.load.image('SKELLY', 'assets/skellychair.jpeg');
       this.load.image('sleep', 'assets/sleep.png');
+      this.load.image('Scott', 'assets/Scott.png');
+      this.load.image('Soccer', 'assets/soccer.png');
+      this.load.audio('Sterling', ['assets/sterling.mp3']);
+      this.load.image('net', 'assets/soccernet.jpeg');
   },
 
   create: function () {

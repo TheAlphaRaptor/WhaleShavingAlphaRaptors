@@ -6,13 +6,13 @@ var game = function () {
 
 module.exports = game;
 
-const textures = ["testsprite", "bananurai", "pupper"];
+const textures = ["testsprite", "bananurai"];
 var image;
 var player;
 game.prototype = {
   texture: 0,
   create: function () {
-    this.game.world.setBounds(0, 0, 800, 800);
+    this.game.world.setBounds(0, 0, 900, 900);
 // Varibles
     var x = (this.game.width) - 100;
     var y = (this.game.height) - 50;
@@ -43,19 +43,20 @@ game.prototype = {
     player.scale.setTo(.5,.5);
     player.inputEnabled = true;
     image.scale.setTo(.5,.5);
+    player.anchor.setTo(0.5,0.5);
 
     this.cursors = this.game.input.keyboard.createCursorKeys();
     this.physics.enable(image, Phaser.Physics.ARCADE);
     this.physics.enable(player, Phaser.Physics.ARCADE);
-    this.physics.enable(player, Phaser.Physics.P2JS);
+   // this.physics.enable(player, Phaser.Physics.P2JS);
 
     player.body.enable = true;
 
 
-    image.body.velocity.setTo(200,200);
+    image.body.velocity.setTo(100,100);
     image.body.collideWorldBounds = true;
     player.body.collideWorldBounds = true;
-    this.game.world.setBounds(0, 0, 800, 800);
+    this.game.world.setBounds(0, 0, 900, 900);
    // this.physics.p2.restitution = 0.8;
    // image.smoothed=false;
    // player.smoothed=false;
@@ -79,7 +80,7 @@ game.prototype = {
     // image.angle += 100;
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
-    player.body.angularVelocity = 50;
+    player.body.angularVelocity = 0;
 
     if (this.cursors.left.isDown)
     {
@@ -98,7 +99,7 @@ game.prototype = {
       player.body.velocity.y = 200;
     }
     if (key1.isDown) {
-      player.body.angularVelocity = -50;
+      player.body.angularVelocity = -300;
       flush.play ();
     }
   },

@@ -1,23 +1,20 @@
-//var Player = require('../models/player.js');
-
 var game = function () {
     this.testentity = null;
 };
 
 module.exports = game;
 
-const textures = ["testsprite", "bananurai", "pupper"];
-var image;
-var player;
+const textures = ["Scott"];
+
 game.prototype = {
     texture: 0,
     create: function () {
-        this.game.world.setBounds(0, 0, 900, 900);
-// Varibles
+        this.game.world.setBounds(0, 0, 800, 800);
+
         var x = (this.game.width) - 100;
         var y = (this.game.height) - 50;
-        SKELLY=this.add.sprite(0,0,"SKELLY");
-        SKELLY.scale.setTo(3.5, 3.5);
+        Scott=this.add.sprite(0,0,"net");
+        Scott.scale.setTo(3,3);
         var key1;
         var key2;
         var songkey=this.input.keyboard.addKey(Phaser.Keyboard.ZERO);
@@ -27,63 +24,54 @@ game.prototype = {
         var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
         key2=this.input.keyboard.addKey(Phaser.Keyboard.W);
         key2.onDown.add(this.changeTexture, this);
-// End varibles
-        song = this.add.audio('WAKEMEUP');
-        song.play ();
-        flush = this.add.audio('flush');
+
+        sterling = this.add.audio('Sterling');
+        sterling.play ();
+        //sterling.volume=.5
+        //flush = this.add.audio('flush');
         // song.loop.true ();
         // this.world.setBounds(0,0,WORLD_WIDTH,WORLD_HEIGHT);
         this.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.restitution = 0.8;
-        image = this.add.sprite(100, 100, 'sleep');
+        image = this.add.sprite(100, 100, 'Soccer');
         //this.physics.arcade.gravity.y=20;
-        player = this.add.sprite(this.world.centerX, this.world.centerY, 'testsprite');
-        // this.physics.enable(player, Phaser.Physics.P2JS);
+        player = this.add.sprite(this.world.centerX, this.world.centerY, 'Scott');
+        this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
         player.scale.setTo(.5,.5);
         player.inputEnabled = true;
-        image.scale.setTo(.5,.5);
-        player.anchor.setTo(0.5, 0.5);
-        image.anchor.setTo(0.5, 0.5);
+        image.scale.setTo(.2,.2);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.physics.enable(image, Phaser.Physics.ARCADE);
         this.physics.enable(player, Phaser.Physics.ARCADE);
-        // this.physics.enable(player, Phaser.Physics.P2JS);
-
+       // this.physics.enable(image, Phaser.Physics.P2JS);
         player.body.enable = true;
 
-
-        image.body.velocity.setTo(100,100);
+        image.body.velocity.setTo(200,200);
         image.body.collideWorldBounds = true;
         player.body.collideWorldBounds = true;
-        this.game.world.setBounds(0, 0, 900, 900);
+        this.game.world.setBounds(0, 0, 800, 800);
         // this.physics.p2.restitution = 0.8;
         // image.smoothed=false;
         // player.smoothed=false;
         image.body.bounce.set(1);
         //this.world.setBounds(0,0,500,500);
-        // player.body.createBodyCallback(image, hitImage, this);
-        this.game.physics.p2.setImpactEvents(true);
 
-        this.game.camera.follow(player);
+        this.game.camera.follow(this.player);
         //   var playerCollisionGroup = this.physics.p2.createCollisionGroup();
         //  var narbrawlCollisionGroup = this.physics.p2.createCollisionGroup();
         //  this.physics.p2.updateBoundsCollisionGroup();
 
     },
-    // hitImage: function(body1, body2) {
-    // this.game.state.start('Level2');
-    // },
+
     update: function () {
-        this.game.physics.arcade.overlap(player, image, this.Win, null, this);
         var key1=this.input.keyboard.addKey(Phaser.Keyboard.A);
         image.angularVelocity += 100;
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         player.body.angularVelocity = 0;
-
         if (this.cursors.left.isDown)
         {
             player.body.velocity.x = -200;
@@ -101,8 +89,8 @@ game.prototype = {
             player.body.velocity.y = 200;
         }
         if (key1.isDown) {
-            player.body.angularVelocity = -300;
-            flush.play ();
+            player.body.angularVelocity = -25;
+       //     flush.play ();
         }
     },
 
@@ -113,13 +101,12 @@ game.prototype = {
         }
         player.loadTexture(textures[this.texture], 0);
     },
-    Win: function(obj1 ,obj2)
-    {
-        this.game.state.start("Level3");
-        song.pause();
+ //   Win: function(obj1 ,obj2)
+ //   {
+  //      this.game.state.start("Level2");
+ //       song.pause();
 
-    },
-    // onInputDown: function () {
-    //  this.game.state.start('Menu');
-    // }
+  //  },
+// onInputDown: function () {
+//  this.game.state.start('Menu');
 };

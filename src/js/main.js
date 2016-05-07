@@ -14,5 +14,6 @@ game.state.add('Preloader', require('./states/preloader'));
 game.state.add('Menu', require('./states/menu'));
 game.state.add('Game', require('./states/game'));
 game.state.add('Level2', require('./states/Level2'));
+game.state.add('Level3', require('./states/Level3'));
 
 game.state.start('Boot');
