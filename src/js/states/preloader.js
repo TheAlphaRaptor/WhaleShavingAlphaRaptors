@@ -33,6 +33,7 @@ Preloader.prototype = {
       this.load.image('Soccer', 'assets/soccer.png');
       this.load.audio('Sterling', ['assets/sterling.mp3']);
       this.load.image('net', 'assets/soccernet.jpeg');
+      this.load.image('Messi', 'assets/Messi.png');
   },
 
   create: function () {

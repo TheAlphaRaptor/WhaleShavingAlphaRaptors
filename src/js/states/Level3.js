@@ -4,7 +4,7 @@ var game = function () {
 
 module.exports = game;
 
-const textures = ["Scott"];
+const textures = ["Scott", "Messi"];
 
 game.prototype = {
     texture: 0,
