@@ -4,9 +4,8 @@ var game = function () {
 
 module.exports = game;
 
-const textures = ["Scott", "Messi"];
-var image;
-var player;
+const textures = ["Derek", "Hansel"];
+
 game.prototype = {
     texture: 0,
     create: function () {
@@ -14,20 +13,20 @@ game.prototype = {
 
         var x = (this.game.width) - 100;
         var y = (this.game.height) - 50;
-        Scott=this.add.sprite(0, 0, "net");
-        Scott.scale.setTo(3, 3);
+        Mugatu = this.add.sprite(0, 0, "Mugatu");
+        Mugatu.scale.setTo(3, 3);
         var key1;
         var key2;
-        var songkey=this.input.keyboard.addKey(Phaser.Keyboard.ZERO);
+        var songkey = this.input.keyboard.addKey(Phaser.Keyboard.ZERO);
         var left = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
         var right = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
         var up = this.input.keyboard.addKey(Phaser.Keyboard.UP);
         var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
-        key2=this.input.keyboard.addKey(Phaser.Keyboard.W);
+        key2 = this.input.keyboard.addKey(Phaser.Keyboard.W);
         key2.onDown.add(this.changeTexture, this);
 
-       song = this.add.audio('Sterling');
-        song.play();
+        sterling = this.add.audio('Relax');
+        sterling.play();
         //sterling.volume=.5
         //flush = this.add.audio('flush');
         // song.loop.true ();
@@ -35,7 +34,7 @@ game.prototype = {
         this.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.restitution = 0.8;
-        image = this.add.sprite(100, 100, 'Soccer');
+        image = this.add.sprite(100, 100, 'Mugatu');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'Scott');
         this.physics.enable(player, Phaser.Physics.P2JS);
@@ -68,6 +67,7 @@ game.prototype = {
     },
 
     update: function () {
+        this.game.physics.arcade.overlap(player, image, this.Win, null, this);
         var key1 = this.input.keyboard.addKey(Phaser.Keyboard.A);
         image.angularVelocity += 100;
         player.body.velocity.x = 0;
@@ -92,14 +92,10 @@ game.prototype = {
     },
 
     changeTexture: function () {
-        this.texture++;
-        if (this.texture >= textures.length) {
+
+        this.texture;
+        if (this.texture >= textures.length)
             this.texture = 0;
-        }
         player.loadTexture(textures[this.texture], 0);
-    },
-    Win: function (obj1, obj2) {
-        this.game.state.start("Level4");
-        song.pause();
     }
 }

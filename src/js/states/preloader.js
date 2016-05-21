@@ -18,8 +18,8 @@ Preloader.prototype = {
       this.game.load.image('background', 'assets/636x460design_01.jpg');
       this.load.image('splash', 'assets/Epic.jpg');
       this.load.image("Dan", "assets/Dan.png");
-      this.load.image('Enemy','assets/Narbrawl2.png');
-      this.load.image('pixwhale','assets/WSAR.jpg');
+      this.load.image('Enemy', 'assets/Narbrawl2.png');
+      this.load.image('pixwhale', 'assets/WSAR.jpg');
       this.load.audio('splashsong', ['assets/splashsound.mp3']);
       this.load.audio('gamesong', ['assets/ShepardTone.mp3']);
       this.load.image('bananurai', 'assets/banaurai.png');
@@ -34,7 +34,13 @@ Preloader.prototype = {
       this.load.audio('Sterling', ['assets/sterling.mp3']);
       this.load.image('net', 'assets/soccernet.jpeg');
       this.load.image('Messi', 'assets/Messi.gif');
+      this.load.image('Blue Steel', 'assets/Blue Steel.jpeg')
+      this.load.image('Derek', 'assets/Derek.png')
+      this.load.image('Hansel', 'assets/Hansel.gif')
+      this.load.image('Mugatu', 'assets/Mugatu.gif')
+      this.load.audio('Relax', ['assets/Relax.mp3'])
   },
+
 
   create: function () {
     this.asset.cropEnabled = false;

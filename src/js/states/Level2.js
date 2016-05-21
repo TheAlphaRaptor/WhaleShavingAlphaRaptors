@@ -1,5 +1,3 @@
-//var Player = require('../models/player.js');
-
 var game = function () {
     this.testentity = null;
 };
@@ -13,7 +11,7 @@ game.prototype = {
     texture: 0,
     create: function () {
         this.game.world.setBounds(0, 0, 900, 900);
-// Varibles
+
         var x = (this.game.width) - 100;
         var y = (this.game.height) - 50;
         SKELLY=this.add.sprite(0,0,"SKELLY");
@@ -27,7 +25,7 @@ game.prototype = {
         var down = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
         key2=this.input.keyboard.addKey(Phaser.Keyboard.W);
         key2.onDown.add(this.changeTexture, this);
-// End varibles
+
         song = this.add.audio('WAKEMEUP');
         song.play ();
         flush = this.add.audio('flush');
