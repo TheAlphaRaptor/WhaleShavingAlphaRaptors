@@ -103,4 +103,4 @@ game.prototype = {
         this.game.state.start("Level4");
         song.pause();
     }
-};
+}

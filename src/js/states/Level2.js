@@ -115,6 +115,7 @@ game.prototype = {
     {
         this.game.state.start("Level3");
         song.pause();
+        flush.pause();
 
     },
     // onInputDown: function () {
