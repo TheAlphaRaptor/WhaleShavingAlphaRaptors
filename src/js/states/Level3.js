@@ -33,12 +33,12 @@ game.prototype = {
         // song.loop.true ();
         // this.world.setBounds(0,0,WORLD_WIDTH,WORLD_HEIGHT);
         this.physics.startSystem(Phaser.Physics.ARCADE);
-        this.game.physics.startSystem(Phaser.Physics.P2JS);
+        //this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.restitution = 0.8;
         image = this.add.sprite(100, 100, 'Soccer');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'Scott');
-        this.physics.enable(player, Phaser.Physics.P2JS);
+      //  this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
         player.scale.setTo(.5, .5);
         player.inputEnabled = true;
@@ -98,8 +98,9 @@ game.prototype = {
         }
         player.loadTexture(textures[this.texture], 0);
     },
-    Win: function (obj1, obj2) {
+    Win: function (obj1, obj2)
+    {
         this.game.state.start("Level4");
         song.pause();
-    }
-}
+    },
+};
