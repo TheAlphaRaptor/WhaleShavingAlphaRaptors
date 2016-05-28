@@ -36,7 +36,7 @@ game.prototype = {
         this.game.physics.p2.restitution = 0.8;
         image = this.add.sprite(100, 100, 'Mugatu');
         //this.physics.arcade.gravity.y=20;
-        player = this.add.sprite(this.world.centerX, this.world.centerY, 'Scott');
+        player = this.add.sprite(this.world.centerX, this.world.centerY, 'Derek');
         this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
         player.scale.setTo(.5, .5);
