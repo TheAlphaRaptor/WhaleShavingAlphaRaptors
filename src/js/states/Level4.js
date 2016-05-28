@@ -13,8 +13,8 @@ game.prototype = {
 
         var x = (this.game.width) - 100;
         var y = (this.game.height) - 50;
-        Mugatu = this.add.sprite(0, 0, "Mugatu");
-        Mugatu.scale.setTo(3, 3);
+        Derek = this.add.sprite(0, 0, "Blue Steel");
+        Derek.scale.setTo(3, 3);
         var key1;
         var key2;
         var songkey = this.input.keyboard.addKey(Phaser.Keyboard.ZERO);

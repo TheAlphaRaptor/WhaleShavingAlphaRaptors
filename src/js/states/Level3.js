@@ -68,6 +68,7 @@ game.prototype = {
     },
 
     update: function () {
+
         var key1 = this.input.keyboard.addKey(Phaser.Keyboard.A);
         image.angularVelocity += 100;
         player.body.velocity.x = 0;
