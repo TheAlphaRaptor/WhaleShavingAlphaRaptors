@@ -37,7 +37,7 @@ game.prototype = {
         image = this.add.sprite(100, 100, 'Mugatu');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'Derek');
-       // this.physics.enable(player, Phaser.Physics.P2JS);
+        // this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
         player.scale.setTo(.9, .9);
         player.inputEnabled = true;
@@ -99,5 +99,11 @@ game.prototype = {
         if (this.texture >= textures.length)
             this.texture = 0;
         player.loadTexture(textures[this.texture], 0);
+    },
+    Win: function (obj1, obj2) {
+        this.game.state.start("end");
+        song.pause();
+        flush.pause();
+
     }
-}
+};
