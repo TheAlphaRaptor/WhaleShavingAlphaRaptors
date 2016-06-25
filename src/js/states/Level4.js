@@ -37,11 +37,13 @@ game.prototype = {
         image = this.add.sprite(100, 100, 'Mugatu');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'Derek');
-        this.physics.enable(player, Phaser.Physics.P2JS);
+       // this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
-        player.scale.setTo(.5, .5);
+        player.scale.setTo(.9, .9);
         player.inputEnabled = true;
-        image.scale.setTo(.2, .2);
+        image.scale.setTo(.7, .7);
+        player.anchor.setTo(0.5, 0.5);
+        image.anchor.setTo(0.5, 0.5);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.physics.enable(image, Phaser.Physics.ARCADE);
@@ -69,7 +71,7 @@ game.prototype = {
     update: function () {
         this.game.physics.arcade.overlap(player, image, this.Win, null, this);
         var key1 = this.input.keyboard.addKey(Phaser.Keyboard.A);
-        image.angularVelocity += 100;
+        image.angularVelocity += 500;
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         player.body.angularVelocity = 0;

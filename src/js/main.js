@@ -16,5 +16,6 @@ game.state.add('Game', require('./states/game'));
 game.state.add('Level2', require('./states/Level2'));
 game.state.add('Level3', require('./states/Level3'));
 game.state.add('Level4', require('./states/Level4'));
+game.state.add('end', require('./states/end'));
 
 game.state.start('Boot');

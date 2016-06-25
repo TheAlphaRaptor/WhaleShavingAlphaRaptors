@@ -34,11 +34,12 @@ Preloader.prototype = {
       this.load.audio('Sterling', ['assets/sterling.mp3']);
       this.load.image('net', 'assets/soccernet.jpeg');
       this.load.image('Messi', 'assets/Messi.gif');
-      this.load.image('Blue Steel', 'assets/Blue Steel.jpeg')
-      this.load.image('Derek', 'assets/Derek.png')
-      this.load.image('Hansel', 'assets/Hansel.gif')
-      this.load.image('Mugatu', 'assets/Mugatu.gif')
-      this.load.audio('Relax', ['assets/Relax.mp3'])
+      this.load.image('Blue Steel', 'assets/Blue Steel.jpeg');
+      this.load.image('Derek', 'assets/Derek.png');
+      this.load.image('Hansel', 'assets/Hansel.gif');
+      this.load.image('Mugatu', 'assets/Mugatu.gif');
+      this.load.audio('Relax', ['assets/Relax.mp3']);
+      this.load.image('end', 'assets/ZeEnd.png');
   },
 
 

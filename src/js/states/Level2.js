@@ -33,7 +33,7 @@ game.prototype = {
         // this.world.setBounds(0,0,WORLD_WIDTH,WORLD_HEIGHT);
         this.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.physics.startSystem(Phaser.Physics.P2JS);
-        this.game.physics.p2.restitution = 0.8;
+      //  this.game.physics.p2.restitution = 0.8;
         image = this.add.sprite(100, 100, 'sleep');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'testsprite');
@@ -117,7 +117,7 @@ game.prototype = {
         song.pause();
         flush.pause();
 
-    },
+    }
     // onInputDown: function () {
     //  this.game.state.start('Menu');
     // }

@@ -38,11 +38,13 @@ game.prototype = {
         image = this.add.sprite(100, 100, 'Soccer');
         //this.physics.arcade.gravity.y=20;
         player = this.add.sprite(this.world.centerX, this.world.centerY, 'Scott');
-        this.physics.enable(player, Phaser.Physics.P2JS);
+      //  this.physics.enable(player, Phaser.Physics.P2JS);
         //player.collideWorldBounds = true;
         player.scale.setTo(.5, .5);
         player.inputEnabled = true;
         image.scale.setTo(.2, .2);
+        player.anchor.setTo(0.5, 0.5);
+        image.anchor.setTo(0.5, 0.5);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.physics.enable(image, Phaser.Physics.ARCADE);
@@ -53,7 +55,7 @@ game.prototype = {
         image.body.velocity.setTo(200, 200);
         image.body.collideWorldBounds = true;
         player.body.collideWorldBounds = true;
-        this.game.world.setBounds(0, 0, 800, 800);
+        this.game.world.setBounds(0, 0, 900, 900);
         // this.physics.p2.restitution = 0.8;
         // image.smoothed=false;
         // player.smoothed=false;
@@ -68,7 +70,7 @@ game.prototype = {
     },
 
     update: function () {
-
+        this.game.physics.arcade.overlap(player, image, this.Win, null, this);
         var key1 = this.input.keyboard.addKey(Phaser.Keyboard.A);
         image.angularVelocity += 100;
         player.body.velocity.x = 0;
